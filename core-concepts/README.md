@@ -12,4 +12,25 @@ Hetting help for a command
    
 Finding on which node pods are running
 
-`kubectl`  
+`kubectl get pods -o wide`
+`kubectl delete pod webapp`
+
+Create a new pod with name `redis` and with image `redis123`
+Use pod-definition YAML file
+
+`kubectl run redis --image=redis123 --dry-run=client -o yaml`  
+`apiVersion: v1  
+kind: Pod  
+metadata:  
+  creationTimestamp: null  
+  labels:  
+    run: redis  
+  name: redis  
+spec:  
+  containers:  
+  - image: redis123  
+    name: redis  
+    resources: {}  
+  dnsPolicy: ClusterFirst  
+  restartPolicy: Always  
+status: {}`
