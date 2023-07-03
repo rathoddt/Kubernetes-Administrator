@@ -35,3 +35,10 @@ spec:
   dnsPolicy: ClusterFirst  
   restartPolicy: Always  
 `status: {}`
+
+` kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml`  
+`kubectl create -f redis.yaml`  
+`kubectl apply -f redis.yaml`
+
+
+`Replcation Controller` is replaced by `Replica Set` - new way of doing thing
