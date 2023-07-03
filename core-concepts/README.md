@@ -76,3 +76,12 @@ spec:
    23  kubectl delete replicaset replicaset-1
    24  kubectl delete replicaset replicaset-2
    25  kubectl get replicasets
+
+
+   29  kubectl edit replicaset new-replica-set
+   30  kubectl get replicasets
+   31  kubectl get pods
+   32  kubectl delete pods new-replica-set-ztbgg
+
+   41  kubectl scale --replicas=5 replicaset new-replica-set
+   42  kubectl scale --replicas=2 replicaset new-replica-set
