@@ -19,10 +19,11 @@ Create a new pod with name `redis` and with image `redis123`
 Use pod-definition YAML file
 
 `kubectl run redis --image=redis123 --dry-run=client -o yaml`  
-`apiVersion: v1`  
-kind: Pod  
-metadata:  
-  creationTimestamp: null  
+Output
+`apiVersion: v1\
+kind: Pod\
+metadata:\
+  creationTimestamp: null`
   labels:  
     run: redis  
   name: redis  
