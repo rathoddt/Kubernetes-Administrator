@@ -20,10 +20,10 @@ Use pod-definition YAML file
 
 `kubectl run redis --image=redis123 --dry-run=client -o yaml`  
 Output
-`apiVersion: v1\
-kind: Pod\
-metadata:\
-  creationTimestamp: null`
+`apiVersion: v1`  
+kind: Pod  
+metadata:  
+  creationTimestamp: null  
   labels:  
     run: redis  
   name: redis  
