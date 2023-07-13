@@ -37,6 +37,6 @@
 
 
 `kubectl create -f replicaset-definition-1.yaml `  
-`vim replicaset-definition-1.yaml ``
+`vim replicaset-definition-1.yaml `
 
 `kubectl create -f replicaset-definition-1.yaml `  
