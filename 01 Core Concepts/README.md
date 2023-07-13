@@ -177,3 +177,20 @@ Both the above commands have their own challenges. While one of it cannot accept
 `kubectl get pods --all-namespaces | grep blue`  
 `kubectl get pods -A | grep blue`  
 
+### Imperative commands
+`kubectl run --image=nginx:alpine nginx-pod`  
+`kubectl get pod`
+
+`kubectl run --image=redis:alpine redis --labels="tier=db"`
+
+`kubectl expose pod redis --name redis-service --port 6379`
+
+`kubectl create deployment --image=kodekloud/webapp-color --replicas=3 webapp`
+
+`kubectl run custom-nginx --image=nginx --port 8080`  
+`kubectl get pods`
+`kubectl create namespace dev-ns`
+
+`kubectl create deployment redis-deploy -n dev-ns --replicas=2 --image=redis`
+
+`kubectl run httpd --image=httpd:alpine --port=80 --expose=true`
