@@ -129,5 +129,14 @@ In k8s version 1.19+, we can specify the --replicas option to create a deploymen
 
 `kubectl delete service webpp-service`  
 
+## Namespaces
+`kubectl get ns`  
+`kubectl get ns | wc -l`  
+`kubectl get all -n research`  
 
+`kubectl run --image=nginx nginx -n finance`  
+`kubectl run --image=redis redis -n finance`  
+`kubectl get pods --all-namespaces`  
+`kubectl get pods --all-namespaces | grep blue`  
+`kubectl get pods -A | grep blue`  
 
