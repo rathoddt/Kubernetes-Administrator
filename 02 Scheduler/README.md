@@ -54,8 +54,8 @@ Which nodes can the pods for the blue deployment be placed on?
 `kubectl get nodes`
 
 ## Reources
-1 cpu = 10000m 
-0.1 cpu = 100m
+1 cpu = 10000m   
+0.1 cpu = 100m  
 m - stands for milli
 
 1 cpu = 1 AWS vCPU  
@@ -69,7 +69,7 @@ m - stands for milli
 `kubectl get pod elephant -o yaml > elephant.yaml`  
 
 
-kubectl get daemonset -A
+`kubectl get daemonset -A`  
 
 
 ## Satic pods
