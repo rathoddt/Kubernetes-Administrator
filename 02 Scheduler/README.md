@@ -40,3 +40,15 @@
 `vim replicaset-definition-1.yaml `
 
 `kubectl create -f replicaset-definition-1.yaml `  
+
+## Node afinity
+
+Apply a label color=blue to node node01
+`kubectl label node node01 color=blue`  
+
+Create a new deployment named blue with the nginx image and 3 replicas.
+ `kubectl create deployment blue --image=nginx --replicas=3`  
+
+Which nodes can the pods for the blue deployment be placed on?
+
+`kubectl get nodes`
