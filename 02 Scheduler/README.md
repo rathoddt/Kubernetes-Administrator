@@ -58,12 +58,12 @@ Which nodes can the pods for the blue deployment be placed on?
 0.1 cpu = 100m
 m - stands for milli
 
-1 cpu = 1 AWS vCPU
-      = 1 GCP Core
-      = 1 Azure Core
-      = 1 Hyperthread
+1 cpu = 1 AWS vCPU  
+      = 1 GCP Core  
+      = 1 Azure Core  
+      = 1 Hyperthread  
 
-1 GB = 1000 MB
+1 GB = 1000 MB  
 1 GiB = 1024 MB
 
 `kubectl get pod elephant -o yaml > elephant.yaml`  
