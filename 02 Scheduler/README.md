@@ -43,12 +43,38 @@
 
 ## Node afinity
 
-Apply a label color=blue to node node01
+Apply a label color=blue to node node01  
 `kubectl label node node01 color=blue`  
 
-Create a new deployment named blue with the nginx image and 3 replicas.
+Create a new deployment named blue with the nginx image and 3 replicas.  
  `kubectl create deployment blue --image=nginx --replicas=3`  
 
-Which nodes can the pods for the blue deployment be placed on?
+Which nodes can the pods for the blue deployment be placed on?  
 
 `kubectl get nodes`
+
+## Reources
+1 cpu = 10000m 
+0.1 cpu = 100m
+m - stands for milli
+
+1 cpu = 1 AWS vCPU
+      = 1 GCP Core
+      = 1 Azure Core
+      = 1 Hyperthread
+
+1 GB = 1000 MB
+1 GiB = 1024 MB
+
+`kubectl get pod elephant -o yaml > elephant.yaml`  
+
+
+kubectl get daemonset -A
+
+
+## Satic pods
+
+`cat /var/lib/kubelet/config.yaml`  
+`ls /etc/just-to-mess-with-you1`  
+`rm /etc/just-to-mess-with-you/greenbox.yaml`   
+
