@@ -78,7 +78,7 @@ and the args field overrides the command instruction
 in the docker file.
 
 
-
+## Configmaps
 `k get pod webapp-color  -o yaml > greep-app.yaml`  
 
 `k create -f greep-app.yaml `  
