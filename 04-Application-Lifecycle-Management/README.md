@@ -96,3 +96,22 @@ in the docker file.
 
 `kubectl replace --force -f /tmp/kubectl-edit-2631806284.yaml`  
 `k get cm`  
+
+## Secrets
+`kubectl get secrets`  
+`kubectl describe secret dashboard-token`  
+
+`echo 'sql01' | base64`  
+`echo 'root' | base64`  
+`echo 'password123' | base64`  
+`k create secret  generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123 `  
+`k get all`  
+`k get secret`  
+`k describe secret db-secret`  
+`kubectl edit pod webapp-pod`  
+`k replace --force -f /tmp/kubectl-edit-304781231.yaml`  
+
+
+`k describe pod/webapp-pod `  
+`echo 'cGFzc3dvcmQxMjMK' | base64 --decode`  
+`echo 'cGFzc3dvcmQxMjMK' | base64 -d`  
