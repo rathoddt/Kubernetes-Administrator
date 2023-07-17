@@ -72,7 +72,7 @@ https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 
 `ssh node01`  
 
-These two commands after uprading worker node  
+These two commands after uprading worker node    
 `k uncordon node01`   
 `k get nodes` 
 
@@ -84,14 +84,14 @@ https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/upgrading-linux-node
 
 `cat /etc/*release*` 
 
-replace x in 1.27.x-00 with the latest patch version
+replace x in 1.27.x-00 with the latest patch version  
 `apt-mark unhold kubeadm && \`
 `apt-get update && apt-get install -y kubeadm=1.27.0-00 && \`
 `apt-mark hold kubeadm` 
 
 `sudo kubeadm upgrade node`   
 
-replace x in 1.27.x-00 with the latest patch version
+replace x in 1.27.x-00 with the latest patch version  
 `apt-mark unhold kubelet kubectl && \`
 `apt-get update && apt-get install -y kubelet=1.27.0-00 kubectl=1.27.0-00 && \`
 `apt-mark hold kubelet kubectl`    
