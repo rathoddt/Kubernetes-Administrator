@@ -115,3 +115,20 @@ in the docker file.
 `k describe pod/webapp-pod `  
 `echo 'cGFzc3dvcmQxMjMK' | base64 --decode`  
 `echo 'cGFzc3dvcmQxMjMK' | base64 -d`  
+
+## initContainers
+`spec: `  
+`  initContainers: `  
+`  - image: busybox`  
+`    name: busybox`  
+`    command: ["sleep","20"] ` 
+ 
+This commands decribes all pods  
+`kubectl describe pods`  
+
+
+
+
+A new application orange is deployed. There is something wrong with it. Identify and fix the issue.  
+
+`kubectl logs orange -c init-myservice`  
