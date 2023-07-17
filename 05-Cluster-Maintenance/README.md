@@ -32,48 +32,48 @@ Upgrade the `controlplane` components to exact version v1.27.0
 Upgrade the kubeadm tool (if not already), then the controlplane components, and finally the kubelet. Practice referring to the Kubernetes documentation page.
 https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 
-`k get nodes` 
-`k get pods -A | wc -l` 
-`k describe node controlplane` 
+`k get nodes`  
+`k get pods -A | wc -l`  
+`k describe node controlplane`  
 
-`k get pods -o wide` 
-
-
-`k describe node | grep -i taints` 
-
-`kubeadm upgrade plan` 
-
-`kubectl drain controlplane --ignore-daemonsets` 
+`k get pods -o wide`  
 
 
-`cat /etc/os-release` 
-`cat /etc/*release*` 
+`k describe node | grep -i taints`  
 
-`apt update` 
-`apt-cache madison kubeadm` 
-`apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm=1.27.0-00 && apt-mark hold kubeadm` 
+`kubeadm upgrade plan`  
 
-`kubeadm version` 
-`kubeadm upgrade plan` 
-
-`sudo kubeadm upgrade apply v1.27.0` 
-`apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet=1.27.0-00 kubectl=1.27.0-00 && apt-mark hold kubelet kubectl` 
-
-`sudo systemctl daemon-reload` 
-`sudo systemctl restart kubelet` 
-
-`kubectl get nodes` 
-`kubectl uncordon controlplane` 
+`kubectl drain controlplane --ignore-daemonsets`  
 
 
+`cat /etc/os-release`   
+`cat /etc/*release*`  
 
-`k drain node01 --ignore-daemonsets ` 
+`apt update`  
+`apt-cache madison kubeadm`
+`apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm=1.27.0-00 && apt-mark hold kubeadm`   
+
+`kubeadm version`   
+`kubeadm upgrade plan`   
+
+`sudo kubeadm upgrade apply v1.27.0`   
+`apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet=1.27.0-00 kubectl=1.27.0-00 && apt-mark hold kubelet kubectl`   
+
+`sudo systemctl daemon-reload`   
+`sudo systemctl restart kubelet`   
+
+`kubectl get nodes`   
+`kubectl uncordon controlplane`   
 
 
-`ssh node01` 
+
+`k drain node01 --ignore-daemonsets `   
+
+
+`ssh node01`  
 
 These two commands after uprading worker node  
-`k uncordon node01` 
+`k uncordon node01`   
 `k get nodes` 
 
 
@@ -85,19 +85,19 @@ https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/upgrading-linux-node
 `cat /etc/*release*` 
 
 replace x in 1.27.x-00 with the latest patch version
-`apt-mark unhold kubeadm && \` 
-`apt-get update && apt-get install -y kubeadm=1.27.0-00 && \` 
+`apt-mark unhold kubeadm && \`
+`apt-get update && apt-get install -y kubeadm=1.27.0-00 && \`
 `apt-mark hold kubeadm` 
 
-`sudo kubeadm upgrade node` 
+`sudo kubeadm upgrade node`   
 
 replace x in 1.27.x-00 with the latest patch version
-`apt-mark unhold kubelet kubectl && \` 
-`apt-get update && apt-get install -y kubelet=1.27.0-00 kubectl=1.27.0-00 && \` 
-`apt-mark hold kubelet kubectl`  
+`apt-mark unhold kubelet kubectl && \`
+`apt-get update && apt-get install -y kubelet=1.27.0-00 kubectl=1.27.0-00 && \`
+`apt-mark hold kubelet kubectl`    
 
-`sudo systemctl daemon-reload` 
-`sudo systemctl restart kubelet` 
+`sudo systemctl daemon-reload`   
+`sudo systemctl restart kubelet`   
 
 
 
