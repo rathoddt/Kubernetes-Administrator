@@ -1,10 +1,10 @@
 # Stoage
-Configure a volume to store these logs at /var/log/webapp on the host.
+Configure a volume to store these logs at /var/log/webapp on the host.  
 Use the spec provided below.
-    - Name: webapp
-    - Image Name: kodekloud/event-simulator
-    - Volume HostPath: /var/log/webapp
-    - Volume Mount: /log
+- Name: webapp
+- Image Name: kodekloud/event-simulator
+- Volume HostPath: /var/log/webapp
+- Volume Mount: /log
 
 <code>
   - env:    
@@ -19,15 +19,15 @@ Use the spec provided below.
 </code>
   
 
-`/tmp/kubectl-edit-2935622297.yaml`  
+`kubectl replace --force -f /tmp/kubectl-edit-2935622297.yaml`  
 
 
 Create a Persistent Volume with the given specification.
-    - Volume Name: pv-log
-    - Storage: 100Mi
-    - Access Modes: ReadWriteMany
-    - Host Path: /pv/log
-    - Reclaim Policy: Retain
+- Volume Name: pv-log
+- Storage: 100Mi
+- Access Modes: ReadWriteMany
+- Host Path: /pv/log
+- Reclaim Policy: Retain
 
 
 `kubectl create -f pv.yaml` 
