@@ -1,0 +1,11 @@
+#Let us claim some of that storage for our application. Create a Persistent Volume Claim with the given specification.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim-log-1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi    
