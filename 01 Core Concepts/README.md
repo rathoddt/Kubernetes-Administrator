@@ -10,7 +10,7 @@ Hetting help for a command
    
 Finding on which node pods are running
 
-`kubectl get pods -o wide`
+`kubectl get pods -o wide`  
 `kubectl delete pod webapp`
 
 Create a new pod with name `redis` and with image `redis123`
