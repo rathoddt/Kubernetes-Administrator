@@ -47,43 +47,20 @@ spec:
 `kubectl replace -f replicaset-definition.yml`  
 `kubectl scale –replicas=6 -f replicaset-definition.yml`  
 
+`kubectl get rc`  
+`kubectl get replicaset`  
 
+`kubectl describe pod new-replica-set-75x9w`  
+`kubectl delete pod busybox777`  
 
-    1  kubctl get pods
-    2  kubectl get pods
-    3  kubectl get rc
-    4  kubectl get rc
-    5  kubectl get replicaset
-    6  kubectl get pods
-    7  kubectl describe pod new-replica-set-75x9w
-    8  kubectl delete pod busybox777
-    9  kubectl delete pod new-replica-set-75x9w 
-   10  kubectl get pods
-   11  clear
-   12  pwd
-   13  ls
-   14  kubectl create -f replicaset-definition-1.yaml
-   15  vim replicaset-definition-1.yaml
-   16  kubectl create -f replicaset-definition-1.yaml
-   17  ls
-   18  kubectl create -f replicaset-definition-2.yaml
-   19  vim replicaset-definition-2.yaml
-   20  vim replicaset-definition-2.yaml
-   21  kubectl create -f replicaset-definition-2.yaml
-   22  kubectl get replicasets
-   23  kubectl delete replicaset replicaset-1
-   24  kubectl delete replicaset replicaset-2
-   25  kubectl get replicasets
+`kubectl create -f replicaset-definition-1.yaml`  
 
-
-   29  kubectl edit replicaset new-replica-set
-   30  kubectl get replicasets
-   31  kubectl get pods
-   32  kubectl delete pods new-replica-set-ztbgg
-
-
-   41  kubectl scale --replicas=5 replicaset new-replica-set
-   42  kubectl scale --replicas=2 replicaset new-replica-set
+`kubectl create -f replicaset-definition-2.yaml`  
+`kubectl get replicasets`  
+`kubectl delete replicaset replicaset-1`  
+`kubectl edit replicaset new-replica-set`  
+`kubectl scale --replicas=5 replicaset new-replica-set`  
+ `kubectl scale --replicas=2 replicaset new-replica-set`  
 
 
    ## Deployments
