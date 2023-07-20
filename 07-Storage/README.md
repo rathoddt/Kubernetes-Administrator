@@ -47,3 +47,13 @@ Delete and recreate the claim-log-1.
    -  Status: Bound
 
 `kubectl replace --force -f pvc.yaml `  
+
+
+
+Create a new Storage Class called delayed-volume-sc that makes use of the below specs:
+
+`provisioner: kubernetes.io/no-provisioner`  
+`volumeBindingMode: WaitForFirstConsumer`  
+
+
+`k create -f sc.yaml `
