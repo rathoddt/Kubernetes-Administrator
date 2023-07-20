@@ -6,8 +6,7 @@ Configure a volume to store these logs at /var/log/webapp on the host.
     volumeMounts:
     - mountPath: /log
       name: log-mount
-
-. . . 
+... 
   volumes:
   - name: log-volume
     hostPath: 
