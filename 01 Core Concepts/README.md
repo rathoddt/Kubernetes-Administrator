@@ -16,7 +16,7 @@ Finding on which node pods are running
 Create a new pod with name `redis` and with image `redis123`
 Use pod-definition YAML file
 
-`kubectl run redis --image=redis123 --dry-run=client -o yaml`  
+` kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml`  
 Output
 `apiVersion: v1`  
 kind: Pod  
@@ -34,7 +34,7 @@ spec:
   restartPolicy: Always  
 `status: {}`
 
-` kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml`  
+
 `kubectl create -f redis.yaml`  
 `kubectl apply -f redis.yaml`
 
