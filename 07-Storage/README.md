@@ -2,11 +2,16 @@
 Configure a volume to store these logs at /var/log/webapp on the host.
 
 <code>
+  - env:    
+    volumeMounts:
+    - mountPath: /log
+      name: log-mount
+
+. . . 
   volumes:
   - name: log-volume
     hostPath: 
       path: /var/log/webapp
-
 </code>
 
 `kubectl create -f pv.yaml` 
