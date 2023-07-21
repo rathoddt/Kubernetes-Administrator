@@ -25,7 +25,7 @@ ls /etc/kubernetes/pki/
 ls /etc/kubernetes/pki/etcd/
 cat /etc/kubernetes/manifests/etcd.yaml | grep server-certificate.crt
 vim /etc/kubernetes/manifests/etcd.yaml
-# use crictl if neccessary
+// use crictl if neccessary
 k get pods
 crictl ps -a
 crictl ps -a | grep kube-apiserver
