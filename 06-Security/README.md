@@ -12,7 +12,7 @@ OpenSSL Syntax: `openssl x509 -in file-path.crt -text -noout`
 
 `openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout`  
 
-
+### Issue 1
 Kubectl suddenly stops responding to your commands. Check it out! Someone recently modified the `/etc/kubernetes/manifests/etcd.yaml` file
 
 You are asked to investigate and fix the issue. Once you fix the issue wait for sometime for kubectl to respond. Check the logs of the ETCD container.
@@ -33,7 +33,7 @@ crictl logs c68467a2a709e
 crictl ps -a | grep kube-apiserver
 </code>
 
-
+### Issue 2
 The kube-api server stopped again! Check it out. Inspect the kube-api server logs and identify the root cause and fix the issue.
 
 Run crictl ps -a command to identify the kube-api server container. Run crictl logs container-id command to view the logs.
