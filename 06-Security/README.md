@@ -51,3 +51,23 @@ cat /etc/kubernetes/manifests/kube-apiserver.yaml
 crictl ps -a | grep kube-apiserver
 k get pods
 </code>
+
+### Ceetificate API
+<code>
+ls /root
+cat akshay.csr 
+cat akshay.key 
+cat akshay.yaml
+cat > akshay.yaml
+cat  akshay.yaml
+cat akshay.csr | base64
+cat akshay.csr | base64 -w 0
+vim akshay.yaml 
+k create -f akshay.yaml 
+k get csr
+k certificate approve akshay
+k get csr
+k get csr agent-smith -o yaml
+k certificate deny agent-smith
+k delete csr agent-smith
+</code>
