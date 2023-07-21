@@ -52,3 +52,19 @@ vim weave-daemonset-k8s.yaml
 kubectl apply -f weave-daemonset-k8s.yaml 
 kubectl get pods -n kube-system
 </code>
+
+What is the POD IP address range configured by weave?  
+`k logs weave-net-lccrn   -n kube-system`  
+
+What is the default gateway configured on the PODs scheduled on `node01`?  
+
+Try scheduling a pod on `node01` and check `ip route` output
+<code>
+k run busybox --image=busybox --dry-run=client -o yaml -- sleep 1000 > busybox.yaml
+vim busybox.yaml 
+k create -f busybox.yaml 
+k get po
+k get po -o wide
+k exec busybox -- ip route
+k exec busybox -- route -n
+</code>
