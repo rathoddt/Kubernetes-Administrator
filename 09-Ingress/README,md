@@ -22,3 +22,25 @@ k edit ing -n critical-space
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 </code>
+
+The NGINX Ingress Controller requires two ServiceAccounts. Create both ServiceAccount with name ingress-nginx and ingress-nginx-admission in the ingress-nginx namespace.  
+<code>
+k create -f ingress-controller.yaml 
+vim ingress-controller.yaml 
+k create -f ingress-controller.yaml 
+k create -f ingress-controller.yaml -n ingress-nginx
+vim ingress-controller.yaml 
+k create -f ingress-controller.yaml -n ingress-nginx
+k create -f ingress-controller.yaml
+k get ns
+k create -f ingress-controller.yaml
+vim ingress-controller.yaml 
+k create -f ingress-controller.yaml
+k get deploy -n ingress-nginx
+k delete deploy n ingress-nginx
+k delete deploy -n ingress-nginx
+k delete deploy ingress-nginx-controller -n ingress-nginx
+vi ingress-controller.yaml 
+k get ns
+k delete ns ingress-nginx 
+</code>
