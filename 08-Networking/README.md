@@ -19,3 +19,16 @@ Notice that ETCD is listening on two ports. Which of these have more client conn
 netstat -npa | grep -i etcd 
 netstat -npa | grep -i etcd | grep -i 2379 | wc -l
 </code>
+
+ps aux | grep -i kubelet | grep -i sock
+ps aux | grep -i kubelet | grep -i container-runtime
+
+What is the path configured with all binaries of CNI supported plugins
+
+`ls /opt/cni/bin`  
+
+What is the CNI plugin configured to be used on this kubernetes cluster?  
+`ls /etc/cni/net.d`  
+
+What binary executable file will be run by kubelet after a container and its associated namespace are created?  
+`cat /etc/cni/net.d/10-flannel.conflist `  
