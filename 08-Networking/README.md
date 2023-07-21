@@ -68,3 +68,24 @@ k get po -o wide
 k exec busybox -- ip route
 k exec busybox -- route -n
 </code>
+
+What is IP range configured for service in within cluster
+<code>
+ls /etc/kubernetes/manifests/
+cd /etc/kubernetes/manifests/
+cat kube-apiserver.yaml 
+</code>
+look for 
+`- --service-cluster-ip-range`   
+
+
+What type of proxy is the kube-proxy configured to use?  
+`k logs kube-proxy-stsfr -n kube-system`  
+
+
+How does this Kubernetes cluster ensure that a `kube-proxy` pod runs on all nodes in the cluster?
+
+Inspect the `kube-proxy` pods and try to identify how they are deployed.
+`k get all -A`  
+
+look for somthing like this `daemonset.apps/kube-proxy` 
