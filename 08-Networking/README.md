@@ -69,6 +69,8 @@ k exec busybox -- ip route
 k exec busybox -- route -n
 </code>
 
+### Service networking
+
 What is IP range configured for service in within cluster
 <code>
 ls /etc/kubernetes/manifests/
