@@ -52,7 +52,7 @@ crictl ps -a | grep kube-apiserver
 k get pods
 </code>
 
-### Ceetificate API
+### Certificate API
 <code>
 ls /root
 cat akshay.csr 
@@ -70,4 +70,29 @@ k get csr
 k get csr agent-smith -o yaml
 k certificate deny agent-smith
 k delete csr agent-smith
+</code>
+
+### kubeconfig
+<code>
+ls -a
+ls .kube/
+cat .kube/config 
+ls
+cat my-kube-config 
+kubectl config use-context research --kubeconfig /root/my-kube-config
+cat my-kube-config 
+mv /root/my-kube-config /root/.kube
+mv /root/my-kube-config /root/.kube/config
+ls
+ls /root/.kube/
+rm /root/.kube/config 
+mv /root/.kube/my-kube-config /root/.kube/config
+k get nodes
+ls /etc/kubernetes/pki/
+kubectl config view
+ls /etc/kubernetes/pki/
+ls /etc/kubernetes/pki/users/
+ls /etc/kubernetes/pki/users/dev-user/
+vim /root/.kube/config 
+k get nodes
 </code>
