@@ -1,0 +1,24 @@
+# Ingress
+
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-ingress-em-
+
+https://kubernetes.github.io/ingress-nginx/examples/
+
+<code>
+k create ing --help
+k get svc -n critical-space
+k get deploy -n critical-space
+kubectl create ingress ingress-pay --rule="/pay=pay-service:8282"
+k get ing 
+k delete ing ingress-pay
+kubectl create ingress ingress-pay -n critical-space --rule="/pay=pay-service:8282"
+k get ing -n critical-space
+k describe ing -n critical-space
+k get pods -n critical-space
+k get  -n critical-space webapp-pay-5fc8b56cb5-j5z4f
+k logs  -n critical-space webapp-pay-5fc8b56cb5-j5z4f
+k edit ing -n critical-space    
+----
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+</code>
