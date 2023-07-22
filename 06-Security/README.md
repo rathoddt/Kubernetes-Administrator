@@ -242,3 +242,28 @@ vim dash-sa.yaml
 k delete deploy web-dashboard 
 k apply -f dash-sa.yaml 
 </code>
+
+## Image security
+<code>
+k create secret
+k get all
+k describe deployment.apps/web 
+k edit deployment.apps/web 
+k delete deploy apps
+k delete deploy apps/web
+k delete deployment.apps/web 
+k apply -f /tmp/kubectl-edit-2937384941.yaml
+vim /tmp/kubectl-edit-2937384941.yaml
+k apply -f /tmp/kubectl-edit-2937384941.yaml
+k get po
+k create secret docker-registry -h
+#--docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
+#kubectl create secret docker-registry  private-reg-cred  --docker-server=myprivateregistry.com:5000 --docker-username=dock_user --docker-password=dock_password --docker-email=dock_user@myprivateregistry.com
+kubectl create secret docker-registry  private-reg-cred  --docker-server=myprivateregistry.com:5000 --docker-username=dock_user --docker-password=dock_password --docker-email=dock_user@myprivateregistry.com
+k edit deployment.apps/web 
+k get  deployment.apps/web -o yaml > deploy.yaml
+vim deploy.yaml 
+k delete deployment.apps/web 
+k create -f deploy.yaml :wq
+
+</code>
