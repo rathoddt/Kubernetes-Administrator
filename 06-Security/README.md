@@ -216,3 +216,29 @@ kubectl api-resources
 kubectl create clusterrole storage-admin --verb=get,list,watch --resource=persistentvolumes,storageclasses
 k create clusterrolebinding michelle-storage-admin --user=michelle --clusterrole=storage-admin
 </code>
+
+## Service account
+<code>
+k get sa
+k describe sa default
+k get deploy
+k describe deploy web-dashboard  
+k get all
+k describe pod pod/web-dashboard-97c9c59f6-4hqnb
+k describe pod web-dashboard-97c9c59f6-4hqnb
+k get all
+k describe pod web-dashboard-97c9c59f6-4hqnb
+k get pod/web-dashboard-97c9c59f6-4hqnb -o yaml
+k create sa dashboard-sa
+ls /var/rbac
+cat /var/rbac/dashboard-sa-role-binding.yaml 
+kubectl create token dashboard-sa
+kubectl describe sa dashboard-sa
+k get deploy
+k dit deploy web-dashboard 
+k edit deploy web-dashboard 
+k get deploy web-dashboard  -o yaml > dash-sa.yaml
+vim dash-sa.yaml 
+k delete deploy web-dashboard 
+k apply -f dash-sa.yaml 
+</code>
