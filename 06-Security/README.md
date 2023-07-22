@@ -96,3 +96,78 @@ ls /etc/kubernetes/pki/users/dev-user/
 vim /root/.kube/config 
 k get nodes
 </code>
+
+### RBAC
+k get roles
+ls /etc/kubernetes/pki/
+ls /etc/kubernetes/manifests/
+cat /etc/kubernetes/manifests/kube-apiserver.yaml 
+k get roles
+k get roles -A
+k get roles -A | wc -l
+k describe role kube-proxy  -n kube-system
+d get rolebindings kube-system
+d get rolebindings -n kube-system
+k get rolebinding -n kube-system
+k describe rolebinding -n kube-system
+k describe rolebinding kube-prox -n kube-system
+cat /root/.kube/config
+k auth can-i get pods  --as dev-user
+cat > dev-userr-role.yaml
+vim dev-userr-role.yaml 
+vim rb-dev-user.yaml
+vim dev-userr-role.yaml 
+vim rb-dev-user.yaml
+crictl ps aux | grep authorization
+crictl ps aux | grep author
+crictl ps -aux | grep authorization
+crictl ps -aux | grep autho
+crictl ps
+crictl ps -aux
+crictl ps -aux | grep auth
+ps -aux | grep auth
+k config view
+k get pods --as dev-user
+
+
+
+
+### Issue 3
+Create the necessary roles and role bindings required for the dev-user to create, list and delete pods in the default namespace.
+
+<code>
+k create -f dev-userr-role.yaml 
+k create -f rb-dev-user.yaml 
+k delete role.rbac.authorization.k8s.io/developer 
+cat dev-userr-role.yaml 
+k create role developer --verb=list,create,delete resources=pods
+k get roles
+k create role developer --verb=list,create,delete resource=pods
+kubectl create role -h'
+kubectl create role -h
+k create role developer --verb=list,create,delete --resource=pods
+k describe role developer
+k get rb
+k get rolebinding
+k delete rolebinding dev-user-binding
+k create rolebinding dev-user-binding --role=developer --user=dev-user
+k describe rolebinding dev-user-binding 
+</code>
+
+### Issue 4
+A set of new roles and role-bindings are created in the blue namespace for the dev-user. However, the dev-user is unable to get details of the dark-blue-app pod in the blue namespace. Investigate and fix the issue.
+
+We have created the required roles and rolebindings, but something seems to be wrong.
+
+<code>
+k get pod dark-blue-app -n blue --as dev-user
+k get role -n blue
+k get rolebinding -n blue
+k describe  rolebinding -n blue
+k describe role -n blue
+k edit rolebinding dev-user-binding -n blue
+k edit role devloper -n blue
+k edit role developer -n blue
+k describe role developer -n blue
+k edit role developer -n blue
+</code>
