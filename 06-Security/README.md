@@ -1,5 +1,7 @@
 # Security
 
+`kubectl api-resources`  
+
 <code>
 ls /etc/kubernetes/manifests/
 cat /etc/kubernetes/manifests/kube-apiserver.yaml 
@@ -97,7 +99,8 @@ vim /root/.kube/config
 k get nodes
 </code>
 
-### RBAC
+## RBAC
+<code>
 k get roles
 ls /etc/kubernetes/pki/
 ls /etc/kubernetes/manifests/
@@ -128,7 +131,7 @@ crictl ps -aux | grep auth
 ps -aux | grep auth
 k config view
 k get pods --as dev-user
-
+</code>
 
 
 
@@ -170,4 +173,46 @@ k edit role devloper -n blue
 k edit role developer -n blue
 k describe role developer -n blue
 k edit role developer -n blue
+</code>
+
+
+What user/groups are the cluster-admin role bound to?
+
+`k describe clusterrolebinding cluster-admin`  
+
+What level of permission does `cluster-admin` role grant.  
+Inspect `cluster-admin` role's priviledges  
+` k describe clusterrole cluster-admin`  
+
+
+A new user michelle joined the team. She will be focusing on the nodes in the cluster. Create the required ClusterRoles and ClusterRoleBindings so she gets access to the nodes.
+<code>
+k get nodes --as michelle
+
+kubectl api-resources
+
+k get clusterrole
+k get clusterrole --no-headers
+k get clusterrole --no-headers | wc -l
+k get clusterrolebinding --no-headers | wc -l
+k get clusterrolebinding --no-headers | grep cluster-admin
+k describe clusterrolebinding cluster-admin
+k describe clusterrole cluster-admin
+
+k get nodes --as michelle
+k create clusterrole -h
+kubectl create clusterrole michelle --verb=get,list,watch --resource=nodes
+k create clusterrolebinding -h
+ kubectl create clusterrolebinding michelle-rb --clusterrole=michelle-role --user=michelle
+k descriebe clusterrole  michelle-role
+k describe clusterrole  michelle-role
+k describe clusterrole
+kubectl create clusterrole michelle-role --verb=get,list,watch --resource=nodes
+k describe clusterrole  michelle-role
+k describe clusterrolebinding  michelle-rb
+k get node --as michelle
+
+kubectl api-resources
+kubectl create clusterrole storage-admin --verb=get,list,watch --resource=persistentvolumes,storageclasses
+k create clusterrolebinding michelle-storage-admin --user=michelle --clusterrole=storage-admin
 </code>
